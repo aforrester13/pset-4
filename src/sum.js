@@ -7,7 +7,7 @@ console.log("")
 do {
      lowerBound = Number(readlineSync.question("Lower bound: "));
      upperBound = Number(readlineSync.question("Upper bound: "));
-} while (lowerBound < Number.MIN_SAFE_INTEGER || lowerBound > Number.MAX_SAFE_INTEGER || upperBound < Number.MIN_SAFE_INTEGER || upperBound > Number.MAX_SAFE_INTEGER || lowerBound >= upperBound || Number.isNaN(lowerBound) || Number.isNaN(upperBound));
+} while (lowerBound < Number.MIN_SAFE_INTEGER || lowerBound > Number.MAX_SAFE_INTEGER || upperBound < Number.MIN_SAFE_INTEGER || upperBound > Number.MAX_SAFE_INTEGER || lowerBound >= upperBound || Number.isNaN(lowerBound) || Number.isNaN(upperBound) || !Number.isInteger(lowerBound) || !Number.isInteger(upperBound));
 
 
 for (let x = lowerBound; x <= upperBound; x++) {
