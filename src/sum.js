@@ -1,25 +1,27 @@
 const readlineSync = require("readline-sync");
 
 let x = 0;
-let y = 0;
-let z = 0;
-
-const lowerBound = readlineSync.question("\nLowerbound: ")
-const upperBound = readlineSync.question("Upperbound: ")
+let sum = 0;
 
 do {
-    x = readlineSync.question("Lowerbound: ")
-    y = readlineSync.question("Upperbound: ")
-} while (x > upperBound || x < Number.MIN_SAFE_INTEGER || x > Number.MAX_SAFE_INTEGER || y < Number.MIN_SAFE_INTEGER || y > Number.MAX_SAFE_INTEGER);
+     lowerBound = Number(readlineSync.question("Lowerbound: "))
+     upperBound = Number(readlineSync.question("Upperbound: "))
+} while (lowerBound < Number.MIN_SAFE_INTEGER || lowerBound > Number.MAX_SAFE_INTEGER || upperBound < Number.MIN_SAFE_INTEGER || upperBound > Number.MAX_SAFE_INTEGER || lowerBound >= upperBound || !Number.isNaN(lowerBound) || !Number.isNaN(upperBound));
 
-while (x < y) {
 
-    if (x % 2 === 0) {
-      z = x + x
-    } else {
+for (let x = lowerBound; x <= upperBound; x++) {
+      if (x % 2 === 0) {
+          for (x = lowerBound; x <= upperBound; x+=2) {
+            sum = x + sum;
+          }
+      }
 
-    }
-  x++
+      if (x % 2 !== 0) {
+          for (x = lowerBound + 1; x <= upperBound; x+=2) {
+            sum = x + sum;
+          }
+      }
 }
 
-console.log("\n" + z)
+
+console.log("\n" + sum + ".")
