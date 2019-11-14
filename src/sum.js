@@ -1,12 +1,13 @@
 const readlineSync = require("readline-sync");
 
-let x = 0;
 let sum = 0;
+let x = 0;
 
+console.log("")
 do {
-     lowerBound = Number(readlineSync.question("Lowerbound: "))
-     upperBound = Number(readlineSync.question("Upperbound: "))
-} while (lowerBound < Number.MIN_SAFE_INTEGER || lowerBound > Number.MAX_SAFE_INTEGER || upperBound < Number.MIN_SAFE_INTEGER || upperBound > Number.MAX_SAFE_INTEGER || lowerBound >= upperBound || !Number.isNaN(lowerBound) || !Number.isNaN(upperBound));
+     lowerBound = Number(readlineSync.question("Lower bound: "));
+     upperBound = Number(readlineSync.question("Upper bound: "));
+} while (lowerBound < Number.MIN_SAFE_INTEGER || lowerBound > Number.MAX_SAFE_INTEGER || upperBound < Number.MIN_SAFE_INTEGER || upperBound > Number.MAX_SAFE_INTEGER || lowerBound >= upperBound || Number.isNaN(lowerBound) || Number.isNaN(upperBound));
 
 
 for (let x = lowerBound; x <= upperBound; x++) {
@@ -22,6 +23,6 @@ for (let x = lowerBound; x <= upperBound; x++) {
           }
       }
 }
-
+sum = sum.toLocaleString('en');
 
 console.log("\n" + sum + ".")
