@@ -1,31 +1,28 @@
-hubconst readlineSync = require("readline-sync");
+const readlineSync = require("readline-sync");
 
-const lowerBound = Number(readlineSync.question("\nEnter first integer: "))
-const upperBound = Number(readlineSync.question("Enter second integer: "))
+let sum = 0;
+let x = 0;
 
-let x = lowerBound
-let y = upperBound
+console.log("")
+do {
+     lowerBound = Number(readlineSync.question("Lower bound: "));
+     upperBound = Number(readlineSync.question("Upper bound: "));
+} while (lowerBound < Number.MIN_SAFE_INTEGER || lowerBound > Number.MAX_SAFE_INTEGER || upperBound < Number.MIN_SAFE_INTEGER || upperBound > Number.MAX_SAFE_INTEGER || lowerBound >= upperBound || Number.isNaN(lowerBound) || Number.isNaN(upperBound) || !Number.isInteger(lowerBound) || !Number.isInteger(upperBound));
 
 
-while (x < y) {
-  if (x > y) {
+for (let x = lowerBound; x <= upperBound; x++) {
+      if (x % 2 === 0) {
+          for (x = lowerBound; x <= upperBound; x+=2) {
+            sum = x + sum;
+          }
+      }
 
-    const lowerBound = Number(readlineSync.question("\nEnter first integer: "))
-    const upperBound = Number(readlineSync.question("Enter second integer: "))
-
-  } else if (x < Number.MIN_SAFE_INTEGER || y > Number.MAX_SAFE_INTEGER) {
-
-    const lowerBound = Number(readlineSync.question("\nEnter first integer: "))
-    const upperBound = Number(readlineSync.question("Enter second integer: "))
-
-  } else if (x % 2 !== 0) {
-
-    theSum = x
-
-  } else if (x % 2 == 0) {
-
-    theSum = lowerBound + x
-
-  }
-  x++
+      if (x % 2 !== 0) {
+          for (x = lowerBound + 1; x <= upperBound; x+=2) {
+            sum = x + sum;
+          }
+      }
 }
+sum = sum.toLocaleString('en');
+
+console.log("\n" + sum + ".\n")
