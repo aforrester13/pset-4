@@ -3,6 +3,7 @@ const readlineSync = require("readline-sync");
 let theInteger = 0;
 let space = "";
 let theSum = 0;
+
 console.log("");
 
 do {
