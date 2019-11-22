@@ -21,4 +21,4 @@ if ((x * 10) % 10 >= 5) {
 
 result = x.toLocaleString('en', {minimumFractionDigits: 0, maximumFractionDigits: 0})
 
-console.log("\n" + result + "\n");
+console.log("\n" + result + ".");

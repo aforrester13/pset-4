@@ -25,4 +25,4 @@ while (theInteger > 0) {
 
 }
 
-console.log("\n" + theSum + ".\n");
+console.log("\n" + theSum + ".");
