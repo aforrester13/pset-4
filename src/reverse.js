@@ -22,4 +22,4 @@ while (theInteger > 0) {
 
 }
 
-console.log("\n" + space + ".");
+console.log("\n" + space + "\n");

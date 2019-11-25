@@ -25,6 +25,7 @@ while (theHeight3 > 1) {
 
 console.log("\n" + space + "  " + opposite)
 
+
 while (theHeight > 1) {
     var space1 = space.replace(" #", "##")
     var opposite1 = opposite.replace("# ", "##")
@@ -35,3 +36,4 @@ while (theHeight > 1) {
     var space = space1
     var opposite = opposite1
 }
+console.log("")
